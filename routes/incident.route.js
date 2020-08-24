@@ -12,10 +12,10 @@ routes.get('/', incident.getAllIncidentController);
 routes.get('/:id', incident.getOneIncidentController);
 
 /**Route update incident */
-routes.put('/services/:id', incident.updateIncidentController);
+routes.put('/:id', incident.updateIncidentController);
 
 /**Route delete incident */
-routes.delete('/services/:id', incident.removeIncidentController);
+routes.delete('/:id', incident.removeIncidentController);
 
 /**Route create comment incident */
 routes.post('/:id/comments', incident.createCommentController);

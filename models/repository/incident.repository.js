@@ -55,7 +55,9 @@ module.exports = {
         try {
             var model = incident;
 
-            var condition = { removed: false };
+            var condition = {
+                removed: false
+            };
 
             if (query.propertyId) {
                 condition['propertyId'] = query.propertyId
@@ -75,7 +77,6 @@ module.exports = {
 
             var model = await model.find(condition);
 
-            // var docs = await incident.find(query).sort(sort).limit(limit).skip(skip);
             return model;
         } catch (error) {
             // console.log(error);

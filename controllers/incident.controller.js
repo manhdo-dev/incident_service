@@ -41,7 +41,7 @@ module.exports = {
                 return res.status(200).json(docs);
             }).catch(err => {
                 // console.log(err);
-                throw Reserr(500, "Unexpected error");
+                throw Reserr(500, "Unexpecteded error");
             })
         } catch (error) {
             //console.log(error);
@@ -62,7 +62,7 @@ module.exports = {
             incidentRepository.getOneIncidentRepository(id).then(docs => {
                 return res.status(200).json(docs);
             }).catch(err => {
-                throw Reserr(500, "Unexpect error");
+                throw Reserr(500, "Unexpected error");
             })
         } catch (error) {
             return res.status(error.code).json(error.message);
@@ -84,7 +84,7 @@ module.exports = {
             incidentRepository.updateIncidentRepository(id, data).then(docs => {
                 return res.status(200).json(docs);
             }).catch(err => {
-                throw Reserr(500, "Unexpect error");
+                throw Reserr(500, "Unexpected error");
             })
         } catch (error) {
             return res.status(error.code).json(error.message);
@@ -105,7 +105,7 @@ module.exports = {
             incidentRepository.removeIncidentRepository(id, data).then(docs => {
                 return res.status(200).json(docs);
             }).catch(err => {
-                throw Reserr(500, "Unexpect error");
+                throw Reserr(500, "Unexpected error");
             })
         } catch (error) {
             return res.status(error.code).json(error.message);
@@ -126,7 +126,7 @@ module.exports = {
             incidentRepository.createComment(id, data).then(docs => {
                 return res.status(200).json(docs);
             }).catch(err => {
-                throw Reserr(500, "Unexpect error");
+                throw Reserr(500, "Unexpected error");
             })
         } catch (error) {
             return res.status(error.code).json(error.message);
@@ -148,7 +148,7 @@ module.exports = {
             incidentRepository.updateComment(id, cmId, data).then(docs => {
                 return res.status(200).json(docs);
             }).catch(err => {
-                throw Reserr(500, "Unexpect error");
+                throw Reserr(500, "Unexpected error");
             })
         } catch (error) {
             return res.status(error.status).json(error.message);
@@ -170,7 +170,7 @@ module.exports = {
             incidentRepository.deleteComment(id, cmId, data).then(docs => {
                 return res.status(200).json(docs);
             }).catch(err => {
-                throw Reserr(500, "Unexpect error");
+                throw Reserr(500, "Unexpected error");
             })
         } catch (error) {
             return res.status(err.status).json(error.message);
