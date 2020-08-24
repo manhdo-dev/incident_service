@@ -15,7 +15,7 @@ mongoose.connect(dbConfig.mongodb.url, {
     useUnifiedTopology: true,
 });
 mongoose.set("useFindAndModify", false);
-console.log("Successful connection to the database");
+console.log("Successful connection to the database...");
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -30,5 +30,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log("The server is running");
+    console.log("The server is running...");
 });

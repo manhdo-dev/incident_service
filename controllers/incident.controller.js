@@ -100,7 +100,7 @@ module.exports = {
     removeIncidentController: (req, res, next) => {
 
         var id = req.params.id;
-        var body = req.body;
+        var data = req.body;
         try {
             incidentRepository.removeIncidentRepository(id, data).then(docs => {
                 return res.status(200).json(docs);
@@ -108,6 +108,7 @@ module.exports = {
                 throw Reserr(500, "Unexpected error");
             })
         } catch (error) {
+            console.log(error);
             return res.status(error.code).json(error.message);
         }
     },

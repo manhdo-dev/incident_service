@@ -6,7 +6,7 @@ module.exports = {
      * Function to create new incident
      * @param {object} data [Data from request data]
      */
-    createIncidentRepository: async(data) => {
+    createIncidentRepository: async (data) => {
 
         try {
             if (!data) {
@@ -50,7 +50,7 @@ module.exports = {
      * @param {object} [limit from request data]
      * @param {object} [skip from request data]
      */
-    getAllIncidentRepository: async(query, sort, limit, skip) => {
+    getAllIncidentRepository: async (query, sort, limit, skip) => {
 
         try {
             var model = incident;
@@ -88,7 +88,7 @@ module.exports = {
      * Function to get one incident
      * @param {object} id [Id from request params id]
      */
-    getOneIncidentRepository: async(id) => {
+    getOneIncidentRepository: async (id) => {
 
         try {
             var result = incident.findById(id);
@@ -103,14 +103,14 @@ module.exports = {
      * @param {object} id [Id from request params id]
      * @param {object} data [Data from request data]
      */
-    updateIncidentRepository: async(id, data) => {
+    updateIncidentRepository: async (id, data) => {
 
         try {
             if (!data) {
                 throw ResErr(400, "Invalid data");
             }
 
-            var result = await incident.finByIdAndUpdate(id, data);
+            var result = await incident.findByIdAndUpdate(id, data);
             return result;
         } catch (error) {
             return ResErr(500, "Unexpected error");
@@ -122,7 +122,7 @@ module.exports = {
      * @param {object} id [Id from request params id]
      * @param {object} data [Data from request data]
      */
-    removeIncidentRepository: async(id, data) => {
+    removeIncidentRepository: async (id, data) => {
 
         try {
             if (!data) {
@@ -132,6 +132,7 @@ module.exports = {
             var result = await incident.findByIdAndRemove(id, data);
             return result;
         } catch (error) {
+            console.log(error);
             return ResErr(500, "Unexpected error");
         }
     },
@@ -141,7 +142,7 @@ module.exports = {
      * @param {object} id [id from request param id]
      * @param {object} data [data from request data]
      */
-    createComment: async(id, data) => {
+    createComment: async (id, data) => {
 
         try {
 
@@ -170,7 +171,7 @@ module.exports = {
      * @param {object} cmId [cmId from commnent]
      * @param {object} data [data from request data]
      */
-    updateComment: async(id, cmId, data) => {
+    updateComment: async (id, cmId, data) => {
 
         try {
             if (!data) {
@@ -216,7 +217,7 @@ module.exports = {
      * @param {object} cmId [cmId from commnent]
      * @param {object} data [data from commnent]
      */
-    deleteComment: async(id, cmId, data) => {
+    deleteComment: async (id, cmId, data) => {
 
         try {
             var condition = {
